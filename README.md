@@ -13,7 +13,7 @@ The analysis follows the standard Data Science workflow:
 ---
 
 ## 📂 Repository Structure
-proyecto-produccion-gas-colombia/
+proyecto-produccion-gas-colombia/  
 │
 ├── data/ # Datasets
 │ ├── raw/ # Original (unmodified) data
