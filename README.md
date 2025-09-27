@@ -14,28 +14,28 @@ The analysis follows the standard Data Science workflow:
 
 ## 📂 Repository Structure
 proyecto-produccion-gas-colombia/  
-│
-├── data/ # Datasets
-│ ├── raw/ # Original (unmodified) data
-│ └── processed/ # Clean/processed datasets
-│
-├── notebooks/ # Jupyter Notebooks
-│ ├── 01_exploration.ipynb
-│ ├── 02_cleaning.ipynb
-│ └── 03_visualization.ipynb
-│
-├── src/ # Modular Python scripts
-│ ├── data_utils.py # Functions for data loading/cleaning
-│ ├── viz_utils.py # Visualization functions
-│ └── analysis.py # Descriptive statistics and helpers
-│
-├── reports/ # Results
-│ ├── figures/ # Exported plots
-│ └── summary.md # Report of key findings
-│
-├── requirements.txt # Python dependencies
-├── README.md # Project description
-└── LICENSE # License (optional)
+│  
+├── data/ # Datasets  
+│ ├── raw/ # Original (unmodified) data  
+│ └── processed/ # Clean/processed datasets  
+│  
+├── notebooks/ # Jupyter Notebooks  
+│ ├── 01_exploration.ipynb  
+│ ├── 02_cleaning.ipynb  
+│ └── 03_visualization.ipynb  
+│  
+├── src/ # Modular Python scripts  
+│ ├── data_utils.py # Functions for data loading/cleaning  
+│ ├── viz_utils.py # Visualization functions  
+│ └── analysis.py # Descriptive statistics and helpers  
+│  
+├── reports/ # Results  
+│ ├── figures/ # Exported plots  
+│ └── summary.md # Report of key findings  
+│  
+├── requirements.txt # Python dependencies  
+├── README.md # Project description  
+└── LICENSE # License (optional)  
 
 
 ---
