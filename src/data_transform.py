@@ -17,7 +17,10 @@ os.chdir("..")
 excel_files = os.listdir('Data/raw_data/ANH_gas_prod/') # create a list with all excel files names in the directory
 datayear_dic = {} # create an empty dictionary to store excel per year dataframes
 sheet_dict = {} # create an empty dictionary to store excel sheet dataframes
-
+namelist = ['AÑO', 'MES', 'CAMPO', 'CONTRATO', 'EMPRESA', 'DEPARTAMENTO',
+       'MUNICIPIO', 'PRODUCCION_FISCALIZADA', 'GASLIFT', 'GAS_REINYECTADO',
+       'GAS_QUEMADO', 'CONSUMO_EN_CAMPO', 'ENVIADO_A_PLANTA', 'GAS_TRANSFORMADO',
+       'ENTREGADO_A_GASEODUCTOS']
 
 ## Process each excel file and its sheets
 for excel in excel_files: # loop through each excel file in the directory
@@ -27,7 +30,7 @@ for excel in excel_files: # loop through each excel file in the directory
 
     for sheet in sheet_names: # loop through each sheet in the excel file
         tempdf = pd.read_excel(data_dir, sheet_name=sheet, skiprows=6, skipfooter=3) # read each sheet into a dataframe and store it in the sheet_dict
-        tempdf.columns = tempdf.columns.str.strip().str.replace(' ','').str.replace('\n','') # remove leading and trailing spaces from column names
+        tempdf.columns =  namelist # assign the predefined column names to the dataframe
         sheet_dict[sheet] = tempdf
 
     datayear_dic[excel] = pd.concat(sheet_dict.values()) # concatenate all sheets dataframes into a single dataframe per excel file and store it in the datayear_dic
@@ -35,5 +38,5 @@ for excel in excel_files: # loop through each excel file in the directory
 final_df = pd.concat(datayear_dic.values()) # concatenate all excel dataframes into a single final dataframe
 
 
-#final_df.to_csv('Data/processed_data/ANH_gas_concat.csv', index=False) # save the final dataframe to an csv file
+final_df.to_csv('Data/processed_data/ANH_gas_concat.csv', index=False) # save the final dataframe to an csv file
 #final_df.to_excel('Data/processed_data/ANH_gas_concat.xlsx', index=False) # save the final dataframe to an excel file
